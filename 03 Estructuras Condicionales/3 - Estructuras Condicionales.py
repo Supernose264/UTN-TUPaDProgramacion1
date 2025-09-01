@@ -6,7 +6,7 @@ from statistics import mode, median, mean
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 # Esto limpia la terminal para que solo quede el programa a la vista
 os.system(CLEAR)
-decision=int(input("Que actividad deseas ver\n1)¿Eres Mayor de edad?\n2)Nota del usuario\n3)numero par o impar\n4)Categorias de edad\n5)Contraseñas de 8 a 14 caracteres\n6)¿hay sesgo? calculo de numeros aleatorios\n7)frases con o sin vocales\n8)Mayusculas y Minusculas\n9)Magnitudes de terremotos"))
+decision=int(input("Que actividad deseas ver\n1)¿Eres Mayor de edad?\n2)Nota del usuario\n3)numero par o impar\n4)Categorias de edad\n5)Contraseñas de 8 a 14 caracteres\n6)¿hay sesgo? calculo de numeros aleatorios\n7)frases con o sin vocales\n8)Mayusculas y Minusculas\n9)Magnitudes de terremotos\n10)hemisferios y estaciones\n"))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 if decision == 1:
@@ -102,7 +102,7 @@ elif decision == 8:
     #2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.
     #3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro.
     nombre=input("Ingresa tu nombre: ")
-    num=input("Elige una opción ""(1: mayúsculas, 2: minúsculas, 3: primera letra mayúscula): ")
+    num=input("Elige una opción ""\n1: mayúsculas, \n2: minúsculas, \n3: primera letra mayúscula\n")
     if num == '1':
         print(nombre.upper())
     elif num == '2':
@@ -137,5 +137,32 @@ elif decision == 9:
     elif magnitud >= 7.0:
         categoria = "Extremo"
     print(f"La magnitud {magnitud} se clasifica como: {categoria}")
+elif decision == 10:
+    #Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes
+    #del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
+    #si el usuario se encuentra en otoño, invierno, primavera o verano.
+    hemisferio=input("En Cual hemisterio te encuentras""Norte(N) o Sur (S)").upper()
+    mes=int(input("Ingresa el número del mes (1-12): "))
+    dia=int(input("Ingresa el día del mes: "))
+    estacion = ""
+    if hemisferio == "N":
+        if (mes == 12 and dia >= 21) or mes == 1 or mes == 2 or (mes == 3 and dia <= 20):
+            estacion = "invierno"
+        elif (mes == 3 and dia >= 21) or mes == 4 or mes == 5 or (mes == 6 and dia <= 20):
+            estacion = "primavera"
+        elif (mes == 6 and dia >= 21) or mes == 7 or mes == 8 or (mes == 9 and dia <= 20):
+            estacion = "verano"
+        elif (mes == 9 and dia >= 21) or mes == 10 or mes == 11 or (mes == 12 and dia <= 20):
+            estacion = "otoño"
+    elif hemisferio == 'S':
+        if (mes == 12 and dia >= 21) or mes == 1 or mes == 2 or (mes == 3 and dia <= 20):
+            estacion = "verano"
+        elif (mes == 3 and dia >= 21) or mes == 4 or mes == 5 or (mes == 6 and dia <= 20):
+            estacion = "otoño"
+        elif (mes == 6 and dia >= 21) or mes == 7 or mes == 8 or (mes == 9 and dia <= 20):
+            estacion = "invierno"
+        elif (mes == 9 and dia >= 21) or mes == 10 or mes == 11 or (mes == 12 and dia <= 20):
+            estacion = "primavera"
+    print(f"Te encuentras en {estacion}.")
 else:
-    print("algo")
+    print("ingrese solo los numeros del 1 al 10")
