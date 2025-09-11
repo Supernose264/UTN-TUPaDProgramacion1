@@ -57,6 +57,18 @@ elif decision == 5:
             print(f"¡Felicidades! Lo adivinaste en {intentos} intentos.")
             break
 elif decision == 6:
-    
+    for i in range (100, -1, -2):
+        print (i) 
+elif decision == 7:
+    print("SUMA ENTRE VALORES")
+    numero = int(input("Escriba un número entero positivo: "))
+    if numero <= 0:
+        print("¡escribi un numero positivo!")
+    else:
+        suma = 0
+        for i in range(0, numero + 1):
+            suma = suma + i
+        print(f"La suma de los números desde 0 hasta {numero} es {suma}")
 else:
+
     print("ingrese solo los numeros del 1 al 10")
