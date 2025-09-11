@@ -28,5 +28,17 @@ elif decision == 3:
     for i in range (numero_1 + 1,numero_2 ):
         suma = suma + i
     print(f"El resultado de la suma entre los dos valores(Excluyendo ambos valores) es {suma}"  )
+elif decision == 4:
+#Elabora un programa que permita al usuario ingresar números enteros y los sume en
+#secuencia. El programa debe detenerse y mostrar el total acumulado cuando el usuario ingrese
+#un 0.
+    resultado = 0
+    numero=int(input("Ingrese un numero:"))
+    while numero != 0:
+        resultado += numero
+        numero=int(input("Ingrese un numero:"))
+        print (f"{resultado} + {numero} = {resultado + numero}" )
+
+    print (f"el resultado total es {resultado}")
 else:
     print("ingrese solo los numeros del 1 al 10")
