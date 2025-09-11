@@ -11,9 +11,13 @@ if decision == 1:
     for i in range (0,100 + 1):
         print(i) 
 elif decision == 2:
-    Desarrolla un programa que solicite al usuario un número entero y determine la cantidad de
-    dígitos que contiene.
- 
-    
+    #Desarrolla un programa que solicite al usuario un número entero y determine la cantidad de
+    #dígitos que contiene.
+    numero=float(input("escribe un numero"))
+    contador = 0
+    while numero != 0:
+        contador += 1
+        numero = numero // 10
+    print(f"El número tiene {contador} dígitos")    
 else:
     print("ingrese solo los numeros del 1 al 10")
