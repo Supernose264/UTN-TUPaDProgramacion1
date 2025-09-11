@@ -1,5 +1,6 @@
 import os
 import platform
+import random
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 decision=int(input("Que actividad deseas ver"))
@@ -38,7 +39,24 @@ elif decision == 4:
         resultado += numero
         numero=int(input("Ingrese un numero:"))
         print (f"{resultado} + {numero} = {resultado + numero}" )
-
     print (f"el resultado total es {resultado}")
+elif decision == 5:
+#Crea un juego en el que el usuario deba adivinar un número aleatorio entre 0 y 9. Al final, el 
+#programa debe mostrar cuántos intentos fueron necesarios para acertar el número.
+    print("Adivida el numero")
+    numero_aleatorio=random.randint(0, 9)
+    intentos=0
+    while True: 
+        intento = int(input("Adivina el número (entre 0 y 9): "))
+        intentos += 1
+        if intento < numero_aleatorio:
+            print("El número es más alto.")
+        elif intento > numero_aleatorio:
+            print("El número es más bajo.")
+        else:
+            print(f"¡Felicidades! Lo adivinaste en {intentos} intentos.")
+            break
+elif decision == 6:
+    
 else:
     print("ingrese solo los numeros del 1 al 10")
