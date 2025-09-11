@@ -18,6 +18,15 @@ elif decision == 2:
     while numero != 0:
         contador += 1
         numero = numero // 10
-    print(f"El número tiene {contador} dígitos")    
+    print(f"El número tiene {contador} dígitos")   
+elif decision == 3:
+#Escribe un programa que sume todos los números enteros comprendidos entre dos valores 
+#dados por el usuario, excluyendo esos dos valores
+    numero_1=int(input("Escribe un primer valor"))
+    numero_2=int(input("Escribe un segundo valor"))
+    suma = 0
+    for i in range (numero_1 + 1,numero_2 ):
+        suma = suma + i
+    print(f"El resultado de la suma entre los dos valores(Excluyendo ambos valores) es {suma}"  )
 else:
     print("ingrese solo los numeros del 1 al 10")
