@@ -103,6 +103,14 @@ elif decision == 8:
     print(f"Números negativos: {numero_negativo}")
     print(f"Números neutros (cero): {neutro}")
 elif decision == 9:
-    
+#Elabora un programa que permita al usuario ingresar 100 números enteros y luego calcule la
+#media de esos valores. (Nota: puedes probar el programa con una cantidad menor, pero debe
+#poder procesar 100 números cambiando solo un valor).
+    suma=0
+    for i in range(100):
+        numero = int(input(f"Ingresa el número {i + 1}: "))
+        suma += numero
+    media = suma / 100
+    print(f"\nLa media de los 100 números ingresados es: {media}")
 else:
     print("ingrese solo los numeros del 1 al 10")
