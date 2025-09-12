@@ -112,5 +112,11 @@ elif decision == 9:
         suma += numero
     media = suma / 100
     print(f"\nLa media de los 100 números ingresados es: {media}")
+elif decision == 10:
+#Escribe un programa que invierta el orden de los dígitos de un número ingresado por el
+#usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745.
+    numero_original = input("Ingresa un número para invertir: ")
+    numero_invertido = numero_original[::-1]
+    print(f"El número invertido es: {numero_invertido}")
 else:
     print("ingrese solo los numeros del 1 al 10")
