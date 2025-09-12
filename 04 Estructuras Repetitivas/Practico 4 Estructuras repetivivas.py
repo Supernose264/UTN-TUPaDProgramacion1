@@ -3,7 +3,17 @@ import platform
 import random
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
-decision=int(input("Que actividad deseas ver"))
+decision=int(input("Que actividad deseas ver: "))
+print("actividad 1: del 0 al 100")
+print("actividad 2: cantidad de digitos en el numero")
+print("actividad 3: suma de numeros entre dos valores")
+print("actividad 4: suma en secuencia")
+print("actividad 5: adivina el numero")
+print("actividad 6: numeros pares del 0 al 100")
+print("actatoria entre 0 y un valor dado")
+print("actividad 8:100 numeros:pares,impares,negativos, positivos y ceros")
+print("actividad 9:100 numeros:media de valores")
+print("actividad 10: invertir numeros")
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 if decision == 1:
