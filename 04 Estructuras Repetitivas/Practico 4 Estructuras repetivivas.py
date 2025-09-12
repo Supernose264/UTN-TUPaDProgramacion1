@@ -3,7 +3,6 @@ import platform
 import random
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
-decision=int(input("Que actividad deseas ver: "))
 print("actividad 1: del 0 al 100")
 print("actividad 2: cantidad de digitos en el numero")
 print("actividad 3: suma de numeros entre dos valores")
@@ -14,6 +13,7 @@ print("actatoria entre 0 y un valor dado")
 print("actividad 8:100 numeros:pares,impares,negativos, positivos y ceros")
 print("actividad 9:100 numeros:media de valores")
 print("actividad 10: invertir numeros")
+decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 if decision == 1:
@@ -24,7 +24,7 @@ if decision == 1:
 elif decision == 2:
     #Desarrolla un programa que solicite al usuario un número entero y determine la cantidad de
     #dígitos que contiene.
-    numero=float(input("escribe un numero"))
+    numero=float(input("escribe un numero:"))
     contador = 0
     while numero != 0:
         contador += 1
@@ -33,8 +33,8 @@ elif decision == 2:
 elif decision == 3:
 #Escribe un programa que sume todos los números enteros comprendidos entre dos valores 
 #dados por el usuario, excluyendo esos dos valores
-    numero_1=int(input("Escribe un primer valor"))
-    numero_2=int(input("Escribe un segundo valor"))
+    numero_1=int(input("Escribe un primer valor:"))
+    numero_2=int(input("Escribe un segundo valor:"))
     suma = 0
     for i in range (numero_1 + 1,numero_2 ):
         suma = suma + i
