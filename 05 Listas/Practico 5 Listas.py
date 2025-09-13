@@ -12,8 +12,8 @@ print("actividad 4: Numeros repetidos")
 print("actividad 5: Estudiantes en clase")
 print("actividad 6: Rotar numeros de una lista")
 print("actividad 7: Lista de temperaturas minimas y maximas")
-print("actividad 8:100 numeros:pares,impares,negativos, positivos y ceros")
-print("actividad 9:100 numeros:media de valores")
+print("actividad 8: Lista de notas de estudiantes")
+print("actividad 9: Tablero de Ta-Te-Ti")
 print("actividad 10: invertir numeros")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
@@ -205,6 +205,42 @@ elif decision == 8:
         suma_materia = sum(estudiante[j] for estudiante in notas)
         promedio_materia = suma_materia / len(notas)
         print(f"\nPromedio de la Materia {j + 1}: {promedio_materia:.2f}")
-
+elif decision == 9:
+    #Representar un tablero de Ta-Te-Ti como una lista de listas (3x3).
+    #• Inicializarlo con guiones "-" representando casillas vacías.
+    #• Permitir que dos jugadores ingresen posiciones (fila, columna) para colocar "X" o "O".
+    #• Mostrar el tablero después de cada jugada.
+    # se crea una matriz de 3x3 (lista de listas) en la que cada celda contiene un guion "-" que representa una casilla vacía.
+    tablero = [["-" for _ in range(3)] for _ in range(3)]
+    # esta funcion muestra el tablero
+    def mostrar_tablero():
+        #Recorre cada fila del tablero.
+        for fila in tablero:
+            #Une los elementos de la fila con " | " para que se vea como un tablero.
+            print(" | ".join(fila))
+        #El print() final agrega una línea en blanco para separar visualmente.
+        print()
+    # esta funcion es para que el jugar haga la jugada
+    def realizar_jugada(jugador, fila, columna): 
+        #Esto Verifica si la casilla está vacía ("-")
+        if tablero[fila][columna] == "-":
+            #Si lo está, coloca el símbolo del jugador X o O
+            tablero[fila][columna] = jugador
+            #esto notifica que el jugador puso una X o O
+            print(f"Jugador {jugador} jugó en ({fila}, {columna})")
+            #esto muestra el tablero actualizado
+            mostrar_tablero()
+        else:
+            #esto es el mensaje que muestra si la casilla esta ocupada
+            print("Esa casilla ya está ocupada. Intenta otra.")
+    # Esto muestra el tablero inicial
+    print("Tablero inicial:")
+    mostrar_tablero()
+    # Se simulan las jugadas
+    realizar_jugada("X", 0, 0)  # Jugador X en la esquina superior izquierda
+    realizar_jugada("O", 1, 1)  # Jugador O en el centro
+    realizar_jugada("X", 0, 1)  # Jugador X en la parte superior central
+    realizar_jugada("O", 2, 2)  # Jugador O en la esquina inferior derecha   
+elif   
 else:
     print("hola")
