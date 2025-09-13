@@ -146,5 +146,37 @@ elif decision == 6:
     lista = [lista[-1]] + lista[:-1]
     #se imprime la lista
     print (lista)
+elif desicion == 7:
+    #Crear una matriz (lista anidada) de 7x2 con las temperaturas mínimas y máximas de una
+    #semana.
+    #• Calcular el promedio de las mínimas y el de las máximas.
+    #• Mostrar en qué día se registró la mayor amplitud térmica.
+    # Lista anidada con las temperaturas minimas y maximas que hubo por dia
+    temperaturas_con_dias = [
+        ("Lunes",    [12, 24]),
+        ("Martes",   [13, 25]),
+        ("Miércoles",[11, 22]),
+        ("Jueves",   [14, 26]),
+        ("Viernes",  [15, 27]),
+        ("Sábado",   [10, 21]),
+        ("Domingo",  [9, 20])
+    ]
+    # se crea dos listas separadas con los valores minimos por un lado y los valores maximos por el otro
+    minimas = [dia[1][0] for dia in temperaturas_con_dias]
+    maximas = [dia[1][1] for dia in temperaturas_con_dias]
+    # se canculan los promedios de cada lista
+    promedio_minimas = sum(minimas)  / len(minimas)
+    promedio_maximas = sum(maximas) / len(maximas)
+    # Se usa max() con el parámetro key para comparar por la temperatura máxima (x[1][1]), para obtener el dia en el que hubo la mayor tempertura y extraerlo de la lista con [0]
+    dia_mayor_maxima = max(temperaturas_con_dias, key=lambda x: x[1][1])[0]
+    # Se calculan las amplitudes termicar para encontrar el día con mayor amplitud
+    amplitudes = [[dia[0], dia[1][1] - dia[1][0]] for dia in temperaturas_con_dias]
+    #Se usa max() sobre la lista amplitudes para compara por el segundo valor de cada lista (x[1]), que es la amplitud.
+    dia_mayor_amplitud = max(amplitudes, key=lambda x: x[1])
+    # Se se imprimen los resultados
+    print(f"\nEl promedio de temperaturas mínimas fue: {promedio_minimas:.2f}°C")
+    print(f"\nEl promedio de temperaturas máximas fue: {promedio_maximas:.2f}°C")
+    print(f"\nEl día con la mayor temperatura máxima fue: {dia_mayor_maxima}")
+    print(f"\nEl día con mayor amplitud térmica fue: {dia_mayor_amplitud[0]} con una diferencia de {dia_mayor_amplitud[1]}°C")    
 else:
     print("hola")
