@@ -8,8 +8,8 @@ os.system(CLEAR)
 print("actividad 1: listas de promedios")
 print("actividad 2: Lista de productos")
 print("actividad 3: Lista de numeros al azar")
-print("actividad 4: suma en secuencia")
-print("actividad 5: adivina el numero")
+print("actividad 4: Numeros repetidos")
+print("actividad 5: Estudiantes en clase")
 print("actividad 6: numeros pares del 0 al 100")
 print("actatoria entre 0 y un valor dado")
 print("actividad 8:100 numeros:pares,impares,negativos, positivos y ceros")
@@ -97,6 +97,47 @@ elif decision == 4:
     print(f"\nLista original \n{datos}")
     #se imprime la lista sin repeticiones
     print(f"\nLista sin datos repetidos \n{lista_sin_repeticiones}")
-
+elif decision == 5:
+#Crear una lista con los nombres de 8 estudiantes presentes en clase.
+#• Preguntar al usuario si quiere agregar un nuevo estudiante o eliminar uno existente.
+#• Mostrar la lista final actualizada.
+#Lista de estudiantes
+    estudiantes = ["Lucía", "Mateo", "Sofía", "Tomás", "Valentina", "Julián", "Camila", "Agustín"]
+    #se imprime la lista de estudiantes
+    print(f"\nLista de estudiantes\n{estudiantes}")
+    #se imprimen en filas los nombres de cada estudiantes
+    for nombre in estudiantes:
+        print(f"- {nombre}")
+    # Se le pregunta al usuario si quiere agregar o eliminar a algun alumno
+    accion = input("\n¿Deseás agregar un nuevo estudiante o eliminar uno existente? (escribí 'agregar' o 'eliminar'): ").lower()
+    # Agregar estudiante
+    if accion == "agregar":
+        # el usuario ingresa el nombre del estudiante que quiere agregar
+        nuevo = input("Ingresá el nombre del nuevo estudiante: ")
+        #el nombre se agrega a la lista
+        estudiantes.append(nuevo)
+        # se notifica al usuario que se agrego al estudiante
+        print(f"\n'{nuevo}' fue agregado a la lista.")
+    # Eliminar estudiante
+    elif accion == "eliminar":
+        # el usuario ingresa el nombre del estudiante que quiere eliminar
+        eliminar = input("Ingresá el nombre del estudiante que querés eliminar: ")
+        #se verifica si el estudiante esta en la lista
+        if eliminar in estudiantes:
+            #se elimina al estudiante
+            estudiantes.remove(eliminar)
+            # se notifica al usuario que se elimino al estudiante
+            print(f"\n'{eliminar}' fue eliminado de la lista.")
+        #si el estudiante no esta en la lista se le notifica al usuario
+        else:
+            print(f"\n'{eliminar}' no se encuentra en la lista.")
+    # Opción inválida
+    else:
+        print("\nOpción no reconocida. Por favor escribí 'agregar' o 'eliminar'.")
+    # Se imprime la lista actualizada mostrando por fila el nombre de cada alumno
+    print("\nLista actualizada de estudiantes:")
+    for nombre in estudiantes:
+        print(f"- {nombre}")    
+decision
 else:
     print("hola")
