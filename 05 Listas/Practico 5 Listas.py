@@ -13,7 +13,7 @@ print("actividad 5: Estudiantes en clase")
 print("actividad 6: Rotar numeros de una lista")
 print("actividad 7: Lista de temperaturas minimas y maximas")
 print("actividad 8: Lista de notas de estudiantes")
-print("actividad 9: Tablero de Ta-Te-Ti")
+print("actividad 9: Tablero de Ta-Te-Ti simulado")
 print("actividad 10: Registro de ventas")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
