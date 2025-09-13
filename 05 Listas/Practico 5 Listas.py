@@ -241,6 +241,30 @@ elif decision == 9:
     realizar_jugada("O", 1, 1)  # Jugador O en el centro
     realizar_jugada("X", 0, 1)  # Jugador X en la parte superior central
     realizar_jugada("O", 2, 2)  # Jugador O en la esquina inferior derecha   
-elif   
+elif decision == 10:
+    #Una tienda registra las ventas de 4 productos durante 7 días, en una matriz de 4x7.
+    #• Mostrar el total vendido por cada producto.
+    #esto es la lista anidada donde cada sublista representa las ventas diarias de un producto
+    ventas = [
+        [10, 12, 9, 14, 11, 13, 15],   # Producto 1
+        [8, 9, 10, 11, 12, 13, 14],    # Producto 2
+        [5, 7, 6, 8, 7, 9, 10],        # Producto 3
+        [20, 18, 22, 19, 21, 23, 24]   # Producto 4
+    ]   
+    #Se calcula la suma total de ventas por producto usando sum() 
+    #recorre cada fila (producto) y lo suma.
+    totales_productos = [sum(producto) for producto in ventas]
+    print("Total vendido por cada producto:")
+    #Se imprime el total de cada producto con su número correspondiente
+    for i, total in enumerate(totales_productos, start=1):
+        print(f"Producto {i}: {total}")
+    #Para cada columna j (día), se suman las ventas de los 4 productos (i de 0 a 3)
+    totales_dias = [sum(ventas[i][j] for i in range(4)) for j in range(7)]
+    #Se busca el índice del día con mayor venta total, se suma 1 porque los días se numeran desde 1 (no desde 0)
+    dia_max = totales_dias.index(max(totales_dias)) + 1
+    print(f"\nDía con mayores ventas totales: Día {dia_max}")
+    #Se busca el índice del producto con mayor venta semanal y se suma 1 para mostrar el número del producto (del 1 al 4).
+    producto_max = totales_productos.index(max(totales_productos)) + 1
+    print(f"Producto más vendido en la semana: Producto {producto_max}")    
 else:
-    print("hola")
+    print("ingrese solo los numeros del 1 al 10")
