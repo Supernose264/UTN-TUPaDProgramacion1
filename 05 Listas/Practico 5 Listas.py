@@ -11,7 +11,7 @@ print("actividad 3: Lista de numeros al azar")
 print("actividad 4: Numeros repetidos")
 print("actividad 5: Estudiantes en clase")
 print("actividad 6: Rotar numeros de una lista")
-print("actatoria entre 0 y un valor dado")
+print("actividad 7: Lista de temperaturas minimas y maximas")
 print("actividad 8:100 numeros:pares,impares,negativos, positivos y ceros")
 print("actividad 9:100 numeros:media de valores")
 print("actividad 10: invertir numeros")
@@ -146,7 +146,7 @@ elif decision == 6:
     lista = [lista[-1]] + lista[:-1]
     #se imprime la lista
     print (lista)
-elif desicion == 7:
+elif decision == 7:
     #Crear una matriz (lista anidada) de 7x2 con las temperaturas mínimas y máximas de una
     #semana.
     #• Calcular el promedio de las mínimas y el de las máximas.
@@ -178,5 +178,33 @@ elif desicion == 7:
     print(f"\nEl promedio de temperaturas máximas fue: {promedio_maximas:.2f}°C")
     print(f"\nEl día con la mayor temperatura máxima fue: {dia_mayor_maxima}")
     print(f"\nEl día con mayor amplitud térmica fue: {dia_mayor_amplitud[0]} con una diferencia de {dia_mayor_amplitud[1]}°C")    
+elif decision == 8:
+    #Crear una matriz con las notas de 5 estudiantes en 3 materias.
+    #• Mostrar el promedio de cada estudiante.
+    #• Mostrar el promedio de cada materia.
+    # Lista anidada de las notas: cada fila es un estudiante, cada columna una materia
+    notas = [        
+        [7, 8, 9],  # Estudiante 1
+        [6, 7, 8],  # Estudiante 2
+        [9, 9, 10], # Estudiante 3
+        [5, 6, 7],  # Estudiante 4
+        [8, 7, 9]   # Estudiante 5
+    ]
+    #loop para que las notas se promedien una por una
+    for i, estudiante in enumerate(notas, start=1):
+        #se calcula el promedio del estudiante
+        promedio = sum(estudiante) / len(estudiante)
+        #se imprime
+        print(f"\nPromedio del Estudiante {i}: {promedio:.2f}")
+    #espacio vacio
+    print()
+    #la cantidad de materias que hay
+    num_materias = len(notas[0])
+    #se calcula el promedio de los estudiantes
+    for j in range(num_materias):
+        suma_materia = sum(estudiante[j] for estudiante in notas)
+        promedio_materia = suma_materia / len(notas)
+        print(f"\nPromedio de la Materia {j + 1}: {promedio_materia:.2f}")
+
 else:
     print("hola")
