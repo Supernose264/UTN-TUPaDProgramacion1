@@ -5,7 +5,7 @@ import random
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 # Esto limpia la terminal para que solo quede el programa a la vista
 os.system(CLEAR)
-print("actividad 1: listas de promedios)
+print("actividad 1: listas de promedios")
 print("actividad 2: Lista de productos")
 print("actividad 3: Lista de numeros al azar")
 print("actividad 4: suma en secuencia")
@@ -18,7 +18,7 @@ print("actividad 10: invertir numeros")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
-if decision = 1:
+if decision == 1:
     #Crear una lista con las notas de 10 estudiantes.
     #• Mostrar la lista completa.
     #• Calcular y mostrar el promedio.
@@ -32,7 +32,7 @@ if decision = 1:
     print((f"La nota mas baja es {min(lista_promedio)}"))
     # se imprime el mayor numero de la lista
     print((f"La nota mas alta es {max(lista_promedio)}"))     
-elif decision = 2:
+elif decision == 2:
     #Pedir al usuario que cargue 5 productos en una lista.
     #• Mostrar la lista ordenada alfabéticamente. Investigue el uso del método sorted().
     #• Preguntar al usuario qué producto desea eliminar y actualizar la lista.
@@ -66,10 +66,10 @@ elif decision = 2:
         productos_actualizados = sorted(productos)
         print("\nLista actualizada de productos:")
         for p in productos_actualizados:
-        print(f"- {p}")
+            print(f"- {p}")
     else:
         print("\n¡Hasta la proxima!")
-elif decision = 3:
+elif decision == 3:
     #Generar una lista con 15 números enteros al azar entre 1 y 100.
     #• Crear una lista con los pares y otra con los impares.
     #• Mostrar cuántos números tiene cada lista.    
@@ -85,4 +85,18 @@ elif decision = 3:
     #se imprimen las listas pares e impares
     print(f"\nLista de numeros pares\n{pares}")
     print(f"\nLista de numeros impares\n{impares}")
+elif decision == 4:
+    #Dada una lista con valores repetidos:
+    #datos = [1, 3, 5, 3, 7, 1, 9, 5, 3]
+    #• Crear una nueva lista sin elementos repetidos.
+    #• Mostrar el resultado
+    datos = [1, 3, 5, 3, 7, 1, 9, 5, 3]
+    #se eliminan los valores repetidos
+    lista_sin_repeticiones=list(set(datos))
+    #se imprime la lista original
+    print(f"\nLista original \n{datos}")
+    #se imprime la lista sin repeticiones
+    print(f"\nLista sin datos repetidos \n{lista_sin_repeticiones}")
+
 else:
+    print("hola")
