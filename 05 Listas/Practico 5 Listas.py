@@ -10,7 +10,7 @@ print("actividad 2: Lista de productos")
 print("actividad 3: Lista de numeros al azar")
 print("actividad 4: Numeros repetidos")
 print("actividad 5: Estudiantes en clase")
-print("actividad 6: numeros pares del 0 al 100")
+print("actividad 6: Rotar numeros de una lista")
 print("actatoria entre 0 y un valor dado")
 print("actividad 8:100 numeros:pares,impares,negativos, positivos y ceros")
 print("actividad 9:100 numeros:media de valores")
@@ -138,6 +138,13 @@ elif decision == 5:
     print("\nLista actualizada de estudiantes:")
     for nombre in estudiantes:
         print(f"- {nombre}")    
-decision
+elif decision == 6:
+    #Dada una lista con 7 números, rotar todos los elementos una posición hacia la derecha (el
+    #último pasa a ser el primero).
+    lista= [1, 2, 3, 4, 5, 6, 7]
+    #se extrae el ultimo valor de la lista para luego concatenarle con la misma lista sin el ultimo valor
+    lista = [lista[-1]] + lista[:-1]
+    #se imprime la lista
+    print (lista)
 else:
     print("hola")
