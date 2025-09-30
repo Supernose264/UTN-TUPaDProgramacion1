@@ -14,6 +14,8 @@ print("actividad 5:Funcion Segundos a Horas")
 print("actividad 6:Funcion Tabla de Multiplicar")
 print("actividad 7:Funcion Operaciones Basicas")
 print("actividad 8:Funcion Calcular IMC")
+print("actividad 9:Funcion Celsius a Fahrenheit")
+print("actividad 10:Funcion Calcular Promedio")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
@@ -173,6 +175,9 @@ match decision:
         Solicitar_segundos()
 
     case 6:
+        #Crear una función llamada tabla_multiplicar(numero) que reciba un
+        #número como parámetro y imprima la tabla de multiplicar de ese
+        #número del 1 al 10. Pedir al usuario el número y llamar a la función.
 
         #definicion de funciones
         def tabla_multiplicar(numero):
@@ -232,6 +237,45 @@ match decision:
         solicitar_datos()
 
     case 9:
-        
+        #Crear una función llamada celsius_a_fahrenheit(celsius) que reciba
+        #una temperatura en grados Celsius y devuelva su equivalente en
+        #Fahrenheit. Pedir al usuario la temperatura en Celsius y mostrar el
+        #resultado usando la función.
+
         #definicion de funciones
-        def
+        def celsius_a_fahrenheit(celsius):
+            #convierte celsius a fahrenheit
+            return (celsius * 9/5) + 32
+        
+        def celsius_a_kelvin(celsius):
+            #convierte celsius a kelvin
+            return celsius + 273.15
+        
+        def solicitar_temperatura():
+            #solicita la temperatura en celsius al usuario
+            celsius=float(input("Dime la temperatura en grados celsius: "))
+            print(f"{celsius} grados celsius son {celsius_a_fahrenheit(celsius)} grados fahrenheit")
+            print(f"{celsius} grados celsius son {celsius_a_kelvin(celsius)} grados kelvin")
+
+        #Programa principal
+        solicitar_temperatura()
+
+    case 10:
+        #Crear una función llamada calcular_promedio(a, b, c) que reciba
+        #tres números como parámetros y devuelva el promedio de ellos.
+        #Solicitar los números al usuario y mostrar el resultado usando esta función.
+
+        #definicion de funciones
+        def calcular_promedio(a, b, c):
+            #calcula el promedio de tres numeros
+            return (a + b + c) / 3
+        
+        def solicitar_numeros():
+            #solicita tres numeros al usuario
+            a=float(input("Dime el primer numero: "))
+            b=float(input("Dime el segundo numero: "))
+            c=float(input("Dime el tercer numero: "))
+            print(f"El promedio de {a}, {b} y {c} es: {calcular_promedio(a, b, c)}")
+
+        #Programa principal 
+        solicitar_numeros()
