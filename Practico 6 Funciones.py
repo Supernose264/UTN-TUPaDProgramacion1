@@ -12,7 +12,8 @@ print("actividad 3:Funcion Informacion Personal")
 print("actividad 4:Funciones Area y Perimetro de un Circulo")
 print("actividad 5:Funcion Segundos a Horas")
 print("actividad 6:Funcion Tabla de Multiplicar")
-
+print("actividad 7:Funcion Operaciones Basicas")
+print("actividad 8:Funcion Calcular IMC")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
@@ -190,6 +191,7 @@ match decision:
 
     case 7:
 
+        #definicion de funciones
         def operaciones_basicas(a, b):
             #realiza operaciones basicas entre dos numeros
             suma = a + b
@@ -209,3 +211,27 @@ match decision:
             
         #Programa principal
         Solicitar_numeros()
+
+    case 8:
+        #Crear una función llamada calcular_imc(peso, altura) que reciba el
+        #peso en kilogramos y la altura en metros, y devuelva el índice de
+        #masa corporal (IMC). Solicitar al usuario los datos y llamar a la función para mostrar el resultado con dos decimales.
+
+        #definicion de funciones
+        def calcular_imc(peso, altura):
+            #calcula el indice de masa corporal
+            return peso / (altura ** 2)
+        
+        def solicitar_datos():
+            #solicita peso en kilogramos y altura en metros
+            peso=float(input("Dime el peso en kilogramos: "))
+            altura=float(input("Dime la altura en metros: "))
+            print(f"El indice de masa corporal es: {calcular_imc(peso, altura)}")
+
+        #Programa principal
+        solicitar_datos()
+
+    case 9:
+        
+        #definicion de funciones
+        def
