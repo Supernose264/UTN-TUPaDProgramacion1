@@ -6,6 +6,7 @@ CLEAR = "cls" if platform.system() == "Windows" else "clear"
 # Esto limpia la terminal para que solo quede el programa a la vista
 os.system(CLEAR)
 print("actividad 1:Funcion Hola Mundo")
+print("actividad 2:Funcion Saludar Usuario")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
@@ -14,6 +15,8 @@ match decision:
         #Crear una función llamada imprimir_hola_mundo que imprima por
         #pantalla el mensaje: “Hola Mundo!”. Llamar a esta función desde el
         #programa principal
+
+        #deficion de funciones
         def imprimir_hola_mundo():
             return print("Hola Mundo!")
         
@@ -46,16 +49,21 @@ match decision:
             print("          ' .  _                 .-`    ")
             print("              '`~\.__,obb#q==~'''    ")
 
+        #Programa principal
         imagen_del_mundo()
+
     case 2:
         import time
         #Crear una función llamada saludar_usuario(nombre) que reciba
         #como parámetro un nombre y devuelva un saludo personalizado.
         #Por ejemplo, si se llama con saludar_usuario("Marcos"), deberá devolver: “Hola Marcos!”. Llamar a esta función desde el programa
         #principal solicitando el nombre al usuario.
+
+        #definicion de funciones
         def saludar_usuario(nombre):
             return print(f"Hola {nombre}!")
-        def reconociendo(nombre_usuario):
+        
+        def reconociendo_al_usuario(nombre_usuario):
             saludar_usuario(nombre_usuario)
             time.sleep(2)
             for i in range(2):
@@ -79,5 +87,7 @@ match decision:
             time.sleep(1)
             print("bueno, encantado de conocerte, adios")
 
+        #Programa principal
         nombre=input("¡HELLO! ¿What is your name? ")
-        reconociendo(nombre)
+        reconociendo_al_usuario(nombre)
+    case 3:
