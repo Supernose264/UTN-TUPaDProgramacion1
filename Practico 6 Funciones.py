@@ -7,6 +7,7 @@ CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 print("actividad 1:Funcion Hola Mundo")
 print("actividad 2:Funcion Saludar Usuario")
+print("actividad 3:Funcion Informacion Personal")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
@@ -95,3 +96,27 @@ match decision:
         nombre=input("¡HELLO! ¿What is your name? ")
         reconociendo_al_usuario(nombre)
     case 3:
+        #Crear una función llamada informacion_personal(nombre, apellido,
+        #edad, residencia) que reciba cuatro parámetros e imprima: “Soy
+        #[nombre] [apellido], tengo [edad] años y vivo en [residencia]”. Pedir los datos al usuario y llamar a esta función con los valores ingresados.
+
+        #definicion de funciones
+        def informacion_personal(nombre, apellido, edad, residencia):
+            #imprime la informacion personal del usuario
+            return print(f"Soy {nombre} {apellido}, tengo {edad} años y vivo en {residencia}.")
+        
+        def recopilando_datos():
+            #recopila los datos del usuario
+            nombre=input("Cual es tu nombre? ")
+            apellido=input("Cual es tu apellido? ")
+            edad =input("Cuantos años tienes? ")
+            while not edad.isdigit():
+                print("Por favor, ingresa un número válido para la edad.")
+                edad =input("Cuantos años tienes? ")
+            residencia=input("Donde vives? ")
+            informacion_personal(nombre, apellido, edad, residencia)
+
+        #Programa principal
+        recopilando_datos()
+    case 4:
+        
