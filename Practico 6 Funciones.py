@@ -10,6 +10,9 @@ print("actividad 1:Funcion Hola Mundo")
 print("actividad 2:Funcion Saludar Usuario")
 print("actividad 3:Funcion Informacion Personal")
 print("actividad 4:Funciones Area y Perimetro de un Circulo")
+print("actividad 5:Funcion Segundos a Horas")
+print("actividad 6:Funcion Tabla de Multiplicar")
+
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
@@ -146,4 +149,63 @@ match decision:
         Solicitar_radio()
     
     case 5:
+        #Crear una función llamada segundos_a_horas(segundos) que reciba
+        #una cantidad de segundos como parámetro y devuelva la cantidad
+        #de horas correspondientes. Solicitar al usuario los segundos y mostrar el resultado usando esta función.
         
+        #definicion de funciones
+        def segundos_a_horas(segundos):
+            #convierte segundos a horas, minutos y segundos
+            return segundos // 3600
+        
+        def segundos_a_minutos(segundos):
+            #convierte segundos a minutos y segundos
+            return segundos // 60
+        
+        def Solicitar_segundos():
+            #solicita los segundos al usuario
+            segundos=int(input("Dime cuantos segundos quieres convertir: "))
+            print(f"{segundos} segundos son {segundos_a_horas(segundos)} horas")
+            print(f"{segundos} segundos son {segundos_a_minutos(segundos)} minutos")
+
+        #Programa principal
+        Solicitar_segundos()
+
+    case 6:
+
+        #definicion de funciones
+        def tabla_multiplicar(numero):
+            #imprime la tabla de multiplica del numero ingresado
+            print(f"Tabla de multiplicar del numero {numero}")
+            for i in range(1, 11):
+                print(f"{numero} x {i} = {numero * i}")
+
+        def Solicitar_numero():
+            #solicita un numero al usuario
+            numero=int(input("Dime un numero y te dare su tabla de multiplicar: "))
+            tabla_multiplicar(numero)
+
+        #Programa principal
+        Solicitar_numero()
+
+    case 7:
+
+        def operaciones_basicas(a, b):
+            #realiza operaciones basicas entre dos numeros
+            suma = a + b
+            resta = a - b
+            multiplicacion = a * b
+            division = a / b if b != 0 else "Indefinida (division por cero)"
+            return suma, resta, multiplicacion, division
+        
+        def Solicitar_numeros():
+            #solicita dos numeros al usuario
+            a=float(input("Dime el primer numero: "))
+            b=float(input("Dime el segundo numero: "))
+            print(f"Suma: {a} + {b} = {operaciones_basicas(a, b)[0]}")
+            print(f"Resta: {a} - {b} = {operaciones_basicas(a, b)[1]}")
+            print(f"Multiplicacion: {a} * {b} = {operaciones_basicas(a, b)[2]}")
+            print(f"Division: {a} / {b} = {operaciones_basicas(a, b)[3]}")
+            
+        #Programa principal
+        Solicitar_numeros()
