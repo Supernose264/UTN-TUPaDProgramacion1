@@ -98,7 +98,7 @@ match decision:
             time.sleep(2)
             print("No, nada, perdon")
             time.sleep(1)
-            print("bueno, encantado de conocerte, adios")
+            print(f"bueno, encantado de conocerte {nombre}, adios")
 
         #Programa principal
         nombre=input("¡HELLO! ¿What is your name? ")
@@ -159,11 +159,11 @@ match decision:
         #definicion de funciones
         def segundos_a_horas(segundos):
             #convierte segundos a horas, minutos y segundos
-            return segundos // 3600
+            return segundos / 3600
         
         def segundos_a_minutos(segundos):
             #convierte segundos a minutos y segundos
-            return segundos // 60
+            return segundos / 60
         
         def Solicitar_segundos():
             #solicita los segundos al usuario
