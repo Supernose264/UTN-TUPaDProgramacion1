@@ -5,9 +5,11 @@ import time
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 # Esto limpia la terminal para que solo quede el programa a la vista
 os.system(CLEAR)
+
 print("actividad 1:Funcion Hola Mundo")
 print("actividad 2:Funcion Saludar Usuario")
 print("actividad 3:Funcion Informacion Personal")
+print("actividad 4:Funciones Area y Perimetro de un Circulo")
 decision=int(input("Que actividad deseas ver: "))
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
@@ -118,5 +120,30 @@ match decision:
 
         #Programa principal
         recopilando_datos()
+
     case 4:
+        #Crear dos funciones: calcular_area_circulo(radio) que reciba el radio como parámetro y devuelva el área del círculo. 
+        #calcular_perimetro_circulo(radio) que reciba el radio como parámetro y devuelva el perímetro del círculo. 
+        # Solicitar el radio al usuario y llamar ambas funciones para mostrar los resultados.
+        from math import pi
+
+        #definicion de funciones
+        def calcular_area_circulo(radio):
+            #calcula el area del circulo
+            return pi * radio ** 2
+        
+        def calcular_perimetro_circulo(radio):
+            #calcula el perimetro del circulo
+            return 2* pi * radio
+        
+        def Solicitar_radio():
+            #solicita el radio al usuario
+            radio=float(input("Dime cual es el radio del circulo: "))
+            print(f"El area del circulo es: {calcular_area_circulo(radio)}")
+            print(f"El perimetro del circulo es: {calcular_perimetro_circulo(radio)}")  
+        
+        #Programa principal
+        Solicitar_radio()
+    
+    case 5:
         
