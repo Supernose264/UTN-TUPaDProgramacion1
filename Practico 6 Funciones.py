@@ -18,9 +18,11 @@ match decision:
 
         #deficion de funciones
         def imprimir_hola_mundo():
+            #imprime hola mundo
             return print("Hola Mundo!")
         
         def imagen_del_mundo():
+            #imprime una imagen del mundo en codigo ascii
             imprimir_hola_mundo()
             input("Presiones enter para continuar...")
             CLEAR = "cls" if platform.system() == "Windows" else "clear"
@@ -61,9 +63,11 @@ match decision:
 
         #definicion de funciones
         def saludar_usuario(nombre):
+            #saluda al usuario
             return print(f"Hola {nombre}!")
         
         def reconociendo_al_usuario(nombre_usuario):
+            #reconoce al usuario
             saludar_usuario(nombre_usuario)
             time.sleep(2)
             for i in range(2):
