@@ -1,5 +1,6 @@
 import os
 import platform
+import time
 # Esto determina el comando de limpieza según el sistema operativo
 CLEAR = "cls" if platform.system() == "Windows" else "clear"
 # Esto limpia la terminal para que solo quede el programa a la vista
@@ -47,10 +48,36 @@ match decision:
 
         imagen_del_mundo()
     case 2:
+        import time
         #Crear una función llamada saludar_usuario(nombre) que reciba
         #como parámetro un nombre y devuelva un saludo personalizado.
         #Por ejemplo, si se llama con saludar_usuario("Marcos"), deberá devolver: “Hola Marcos!”. Llamar a esta función desde el programa
         #principal solicitando el nombre al usuario.
         def saludar_usuario(nombre):
             return print(f"Hola {nombre}!")
-        nombre=input("What is your name? ")
+        def reconociendo(nombre_usuario):
+            saludar_usuario(nombre_usuario)
+            time.sleep(2)
+            for i in range(2):
+                print("emm... let me see.")
+                time.sleep(1)
+                CLEAR = "cls" if platform.system() == "Windows" else "clear"
+                os.system(CLEAR)
+                print("emm... let me see..")
+                time.sleep(1)
+                CLEAR = "cls" if platform.system() == "Windows" else "clear"
+                os.system(CLEAR)
+                print("emm... let me see...")
+                time.sleep(1)
+                CLEAR = "cls" if platform.system() == "Windows" else "clear"
+                os.system(CLEAR)
+            print("¿vos no sos ese que...")
+            time.sleep(2)
+            print("emm...")
+            time.sleep(2)
+            print("No, nada, perdon")
+            time.sleep(1)
+            print("bueno, encantado de conocerte, adios")
+
+        nombre=input("¡HELLO! ¿What is your name? ")
+        reconociendo(nombre)
