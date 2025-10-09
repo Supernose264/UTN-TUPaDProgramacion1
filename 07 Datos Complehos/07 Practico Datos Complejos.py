@@ -19,3 +19,7 @@ precios_frutas['Banana'] = 1330
 precios_frutas['Manzana'] = 1700
 precios_frutas['Melón'] = 2800
 print(precios_frutas)
+
+#3) Siguiendo con el diccionario precios_frutas que resulta luego de ejecutar el código
+#desarrollado en el punto anterior, crear una lista que contenga únicamente las frutas sin los precios.
+print(list(precios_frutas.keys()))
