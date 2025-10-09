@@ -161,6 +161,25 @@ elif decision==8:
             #si el producto no existe, muestra un mensaje
             else:
                 print("El producto no existe")
-
+        elif opcion==3:
+            #ingresa el nombre del nuevo producto
+            producto=input("Ingrese el nombre del nuevo producto: ")
+            #si el producto no existe, lo agrega al diccionario
+            if producto not in Productos:
+                unidades=int(input("Ingrese la cantidad de unidades: "))
+                #verifica que las unidades sean positivas
+                while unidades<0:
+                    print("La cantidad de unidades debe ser positiva")
+                    unidades=int(input("Ingrese la cantidad de unidades: "))
+                Productos[producto]=unidades
+                print(f"El producto {producto} fue agregado con un stock de {unidades}")
+            #si el producto ya existe, muestra un mensaje
+            else:
+                print("El producto ya existe")
+        elif opcion==4:
+            print("Saliendo...")
+            break
+elif decision==9:
+    print("Actividad 9")
 else:
     print("Opcion no valida")
