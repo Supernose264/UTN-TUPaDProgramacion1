@@ -9,6 +9,7 @@ print("actividad 1,2,3:Diccionario precios_frutas")
 print("actividad 4:Agenda telefonica")
 print("actividad 5:Frase unica y contador de palabras")
 print("actividad 6:notas de alumnos")
+print("actividad 7:Estudiantes que aprobaron parciales")
 decision=int(input("Que actividad deseas ver: "))
 os.system(CLEAR)
 if decision==1 or decision==2 or decision==3:
@@ -116,3 +117,10 @@ elif decision==7:
     #• Mostrá los que aprobaron ambos parciales.
     #• Mostrá la lista total de estudiantes que aprobaron al menos un parcial (sin repetir).
     #• Mostrá los que aprobaron solo uno de los dos.
+    parcial1={1,2,3,4,5,6,7,8,9,10}
+    parcial2={5,6,7,8,9,10,11,12,13,14}
+    print("Estudiantes que aprobaron ambos parciales: ", parcial1.intersection(parcial2))
+    print("Lista total de estudiantes que aprobaron al menos un parcial (sin repetir): ", parcial1.union(parcial2))
+    print("Estudiantes que aprobaron solo uno de los dos parciales: ", parcial1.symmetric_difference(parcial2))
+else:
+    print("Opcion no valida")
