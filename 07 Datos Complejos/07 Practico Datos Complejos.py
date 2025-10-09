@@ -6,10 +6,11 @@ CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 
 print("actividad 1,2,3:Diccionario precios_frutas")
-print("actividad 4:Agenda telefonica")
+print("actividad 4:Contactos telefonicos")
 print("actividad 5:Frase unica y contador de palabras")
 print("actividad 6:notas de alumnos")
 print("actividad 7:Estudiantes que aprobaron parciales")
+print("actividad 8:Stock de productos")
 decision=int(input("Que actividad deseas ver: "))
 os.system(CLEAR)
 if decision==1 or decision==2 or decision==3:
@@ -122,5 +123,44 @@ elif decision==7:
     print("Estudiantes que aprobaron ambos parciales: ", parcial1.intersection(parcial2))
     print("Lista total de estudiantes que aprobaron al menos un parcial (sin repetir): ", parcial1.union(parcial2))
     print("Estudiantes que aprobaron solo uno de los dos parciales: ", parcial1.symmetric_difference(parcial2))
+elif decision==8:
+    #Armá un diccionario donde las claves sean nombres de productos y los valores su stock.
+    #Permití al usuario:
+    #• Consultar el stock de un producto ingresado.
+    #• Agregar unidades al stock si el producto ya existe.
+    #• Agregar un nuevo producto si no existe.
+    Productos={"Arroz": 10, "Fideos": 15, "Pan": 20, "Leche": 25}
+    #Menu de opciones
+    while True:
+        print("1. consultar stock")
+        print("2. Agregar unidades al stock")
+        print("3. Agregar un nuevo producto")
+        print("4. Salir")
+        opcion=int(input("Ingrese una opcion: "))
+        if opcion==1:
+            # ingresa el nombre del producto a consultar
+            producto=input("Ingrese el nombre del producto: ")
+            #si el producto existe, muestra el stock
+            if producto in Productos:
+                print(f"El stock de {producto} es: {Productos[producto]}")
+            #si el producto no existe, muestra un mensaje
+            else:
+                print("El producto no existe")
+        elif opcion==2:
+            #ingresa el nombre del producto al que se le van a agregar unidades
+            producto=input("Ingrese el nombre del producto: ")
+            #si el producto existe, agrega las unidades al stock
+            if producto in Productos:
+                unidades=int(input("Ingrese la cantidad de unidades a agregar: "))
+                #verifica que las unidades sean positivas
+                while unidades<0:
+                    print("La cantidad de unidades debe ser positiva")
+                    unidades=int(input("Ingrese la cantidad de unidades a agregar: "))
+                Productos[producto]+=unidades
+                print(f"El nuevo stock de {producto} es: {Productos[producto]}")
+            #si el producto no existe, muestra un mensaje
+            else:
+                print("El producto no existe")
+
 else:
     print("Opcion no valida")
