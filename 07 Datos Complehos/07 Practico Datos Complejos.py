@@ -6,9 +6,10 @@ CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 
 print("actividad 1,2,3:Diccionario precios_frutas")
-
+print("actividad 4:Agenda telefonica")
+print("actividad 5:Frase unica y contador de palabras")
+print("actividad 6:notas de alumnos")
 decision=int(input("Que actividad deseas ver: "))
-CLEAR = "cls" if platform.system() == "Windows" else "clear"
 os.system(CLEAR)
 if decision==1 or decision==2 or decision==3:
     #1) Dado el diccionario precios_frutas
@@ -62,3 +63,56 @@ elif decision==4:
         contactos[nombre]=numero
     print("Contactos cargados")
     print(contactos)
+elif decision==5:
+    #5) Solicita al usuario una frase e imprime:
+    #• Las palabras únicas (usando un set).
+    #• Un diccionario con la cantidad de veces que aparece cada palabra
+    frase=input("Ingrese una frase: ")
+    # Divide la frase en palabras usando el espacio como separador
+    palabras=frase.split()
+    # Imprime las palabras únicas usando un set
+    print("Palabras unicas: ", set(palabras))
+    contador_palabras={}
+    # Recorre la lista de palabras y cuenta las apariciones
+    for palabra in palabras:
+        # Si la palabra ya está en el diccionario, incrementa su contador
+        if palabra in contador_palabras:
+            contador_palabras[palabra]+=1
+        # Si la palabra no está en el diccionario, la agrega con contador 1
+        else:
+            contador_palabras[palabra]=1
+    print("Recuento: ", contador_palabras)
+elif decision==6:   
+    #Permití ingresar los nombres de 3 alumnos, y para cada uno una tupla de 3 notas.
+    #Luego, mostrá el promedio de cada alumno.
+    alumnos={}
+    for i in range(3):
+        nombre=input("Ingrese el nombre del alumno: ")
+        while nombre in alumnos:
+            print("El alumno ya existem ingrese otro")
+            nombre=input("Ingrese el nombre del alumno: ")
+        notas=[]
+        #Ingresa las 3 notas del alumno
+        for j in range(3):
+            nota=float(input(f"ingrese la nota {j+1} del alumno {nombre}: "))
+            #Verifica que la nota este entre 0 y 10
+            while nota<0 or nota>10:
+                print("La nota debe estar entre 0 y 10")
+                #solicita nuevamente la nota
+                nota=float(input(f"ingrese la nota {j+1} del alumno {nombre}: "))
+            #se agrega la nota a la lista de notas
+            notas.append(nota)
+        #se agrega el alumno al diccionario con su tupla de notas
+        alumnos[nombre]=tuple(notas)
+        os.system(CLEAR)
+        #agregar un salto de linea para que se vea mejor
+    print("Alumnos y sus notas: ", alumnos,"\n")
+    for alumno, notas in alumnos.items():
+        promedio=sum(notas)/len(notas)
+        print(f"El promedio de {alumno} es: {promedio}")
+elif decision==7:
+    # Dado dos sets de números, representando dos listas de estudiantes que aprobaron Parcial 1
+    #y Parcial 2:
+    #• Mostrá los que aprobaron ambos parciales.
+    #• Mostrá la lista total de estudiantes que aprobaron al menos un parcial (sin repetir).
+    #• Mostrá los que aprobaron solo uno de los dos.
