@@ -11,6 +11,8 @@ print("actividad 5:Frase unica y contador de palabras")
 print("actividad 6:notas de alumnos")
 print("actividad 7:Estudiantes que aprobaron parciales")
 print("actividad 8:Stock de productos")
+print("actividad 9:Agenda de eventos")
+print("actividad 10:Diccionario de paises y capitales")
 decision=int(input("Que actividad deseas ver: "))
 os.system(CLEAR)
 if decision==1 or decision==2 or decision==3:
@@ -180,6 +182,34 @@ elif decision==8:
             print("Saliendo...")
             break
 elif decision==9:
-    print("Actividad 9")
+    #Creá una agenda donde las claves sean tuplas de (día, hora) y los valores sean eventos.
+    #Permití consultar qué actividad hay en cierto día y hora
+    agenda={}
+    #Carga de eventos
+    for i in range(3):
+        dia=input("Ingrese el dia del evento (formato DD/MM): ")
+        hora=input("Ingrese la hora del evento (formato HH:MM): ")
+        evento=input("Ingrese el nombre del evento: ")
+        #Verifica que el evento no exista
+        while (dia, hora) in agenda:
+            print("El evento ya existe, ingrese otro")
+            dia=input("Ingrese el dia del evento (formato DD/MM): ")
+            hora=input("Ingrese la hora del evento (formato HH:MM): ")
+            evento=input("Ingrese el nombre del evento: ")
+        #Agrega el evento a la agenda
+        agenda[(dia, hora)]=evento
+    print("Eventos cargados")
+    print(agenda)
+elif decision==10:
+    #Dado un diccionario que mapea nombres de países con sus capitales, construí un nuevo
+    #diccionario donde:
+    #• Las capitales sean las claves.
+    #• Los países sean los valores
+    original ={"Argentina": "Buenos Aires", "Brasil": "Brasilia", "Chile": "Santiago", "Uruguay": "Montevideo"}
+    invertido={}
+    for pais, capital in original.items():
+        invertido[capital]=pais
+    print("Diccionario original: ", original)
+    print("Diccionario invertido: ", invertido)
 else:
     print("Opcion no valida")
