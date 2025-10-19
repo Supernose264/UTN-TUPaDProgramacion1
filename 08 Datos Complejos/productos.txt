@@ -1,0 +1,3 @@
+nombre,precio,cantidad
+queso,$500,5
+pan,$230,12
