@@ -5,7 +5,7 @@ CLEAR = "cls" if platform.system() == "Windows" else "clear"
 # Esto limpia la terminal para que solo quede el programa a la vista
 os.system(CLEAR)
 
-# funcion para mostrar los productos
+# funcion para mostrar los productos.
 def mostrar_productos():
     
 #2. Leer y mostrar productos: Crear un programa que abra productos.txt, lea cada
@@ -18,7 +18,7 @@ def mostrar_productos():
             print(f"Producto: {producto} | Precio: ${precio} | Cantidad: {cantidad}")
 
 
-# funcion para agregar productos
+# funcion para agregar productos.
 def agregar_producto():
 #3. Agregar productos desde teclado: Modificar el programa para que luego de mostrar
 #los productos, le pida al usuario que ingrese un nuevo producto (nombre, precio,
