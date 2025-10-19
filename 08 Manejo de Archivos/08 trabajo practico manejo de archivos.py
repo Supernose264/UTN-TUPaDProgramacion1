@@ -30,5 +30,22 @@ def agregar_producto():
         archivo.write(f"{producto},{precio},{cantidad}\n")
     print("Producto agregado exitosamente.")
 
+# funcion para cargar productos en diccionarios.
+def diccionarios_de_productos():
+#4. Cargar productos en una lista de diccionarios: Al leer el archivo, cargar los datos en
+#una lista llamada productos, donde cada elemento sea un diccionario con claves:
+#nombre, precio, cantidad.
+
+    productos = {}
+    with open("productos.txt", "r") as archivo:
+        for linea in archivo:
+            producto, precio, cantidad = linea.strip().split(",")
+            productos[producto] = {"precio": float(precio), "cantidad": int(cantidad)}
+    return productos
+
+# Ejecucion de las funciones
 agregar_producto()
 mostrar_productos()
+print(diccionarios_de_productos())
+
+
