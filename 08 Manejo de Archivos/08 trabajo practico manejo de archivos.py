@@ -43,9 +43,21 @@ def diccionarios_de_productos():
             productos[producto] = {"precio": float(precio), "cantidad": int(cantidad)}
     return productos
 
+
+#5. Buscar producto por nombre: Pedir al usuario que ingrese el nombre de un
+#producto. Recorrer la lista de productos y, si lo encuentra, mostrar todos sus datos. Si
+#no existe, mostrar un mensaje de error.
+def buscar_producto():
+    nombre_por_nombre = input("Ingrese el nombre del producto a buscar: ")
+    productos = diccionarios_de_productos()
+    if nombre_por_nombre in productos:
+        datos = productos[nombre_por_nombre]
+        print(f"Producto encontrado: {nombre_por_nombre} | Precio: ${datos['precio']} | Cantidad: {datos['cantidad']}")
+    else:
+        print("Producto no encontrado.")
+
 # Ejecucion de las funciones
 agregar_producto()
 mostrar_productos()
 print(diccionarios_de_productos())
-
-
+buscar_producto()
