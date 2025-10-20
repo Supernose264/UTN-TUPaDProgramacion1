@@ -7,7 +7,6 @@ os.system(CLEAR)
 
 # funcion para mostrar los productos.
 def mostrar_productos():
-    
 #2. Leer y mostrar productos: Crear un programa que abra productos.txt, lea cada
 #línea, la procese con .strip() y .split(","), y muestre los productos en el siguiente
 #formato:
@@ -56,8 +55,20 @@ def buscar_producto():
     else:
         print("Producto no encontrado.")
 
+
+#6. Guardar los productos actualizados: Después de haber leído, buscado o agregado
+#productos, sobrescribir el archivo productos.txt escribiendo nuevamente todos los
+#productos actualizados desde la lista.
+def guardar_productos(productos):
+    with open("productos.txt", "w") as archivo:
+        for producto, datos in productos.items():
+            archivo.write(f"{producto},{datos['precio']},{datos['cantidad']}\n")
+        print("Productos guardados exitosamente.")
+#no entendi bien esta actividad        
+
 # Ejecucion de las funciones
 agregar_producto()
 mostrar_productos()
 print(diccionarios_de_productos())
 buscar_producto()
+guardar_productos(diccionarios_de_productos())
