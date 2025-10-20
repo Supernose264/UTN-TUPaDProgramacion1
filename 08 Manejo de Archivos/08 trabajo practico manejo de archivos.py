@@ -77,7 +77,7 @@ def menu():
         print("4. Mostrar diccionario de productos")
         print("5. Guardar productos")
         print("6. Salir")
-        opcion = input("Seleccione una opción (1-4): ").strip()
+        opcion = input("Seleccione una opción (1-6): ").strip()
         match opcion:
             case "1":
                 mostrar_productos()
@@ -89,7 +89,7 @@ def menu():
                 buscar_producto()
                 input("\nPresione Enter para continuar...")
             case "4":
-                pprint(diccionarios_de_productos())
+                print(diccionarios_de_productos())
                 input("\nPresione Enter para continuar...")
             case "5":
                 guardar_productos(diccionarios_de_productos())
