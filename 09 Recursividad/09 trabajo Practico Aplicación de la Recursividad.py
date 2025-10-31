@@ -29,15 +29,6 @@ def mostrar_factoriales_hasta(n):
 #Crea una función recursiva que calcule el valor de la serie de Fibonacci en la posición
 #indicada. Posteriormente, muestra la serie completa hasta la posición que el usuario
 #especifique.
-# función que muestra la serie de Fibonacci hasta n usando recursividad
-def mostrar_fibonacci_hasta(n):
-    if n < 0:
-        print("Ingrese un número entero positivo o cero.")
-        return
-
-    print("Serie de Fibonacci hasta la posición", n, ":")
-    for i in range(n + 1):
-        print(f"Posición {i}: {fibonacci(i)}")
 
 # función recursiva para calcular Fibonacci
 def fibonacci(n):
@@ -48,6 +39,38 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
+# función que muestra la serie de Fibonacci hasta n usando recursividad
+def mostrar_fibonacci_hasta(n):
+    if n < 0:
+        print("Ingrese un número entero positivo o cero.")
+        return
+
+    print("Serie de Fibonacci hasta la posición", n, ":")
+    for i in range(n + 1):
+        print(f"Posición {i}: {fibonacci(i)}")
+
+#Crea una función recursiva que calcule la potencia de un número base elevado a un
+#exponente, utilizando la fórmula 𝑛^𝑚 = 𝑛 ∗ 𝑛^(𝑚−1). Prueba esta función en un algoritmo general.
+
+# funcion recursiva para calcular potencia
+def potencia_recursiva(base, exponente):
+    # cualquier número elevado a 0 es 1
+    if exponente == 0:
+        return 1
+    # Aca aplicamos la fórmula n^m = n * n^(m-1)
+    else:
+        return base * potencia_recursiva(base, exponente - 1)
+
+
+#Crear una función recursiva en Python que reciba un número entero positivo en base
+#decimal y devuelva su representación en binario como una cadena de texto.
+
+# funcion recursiva para convertir decimal a binario
+def decimal_a_binario(n):
+    if n == 0:
+        return 0
+    else:
+        return str(decimal_a_binario(n // 2)) + str(n % 2)
 
 # funcion del menu principal
 def menu():
@@ -56,8 +79,10 @@ def menu():
         print("== Menu del trabajo Practico ==")
         print("1. Calcular factoriales")
         print("2. Mostrar serie de Fibonacci")
-        print("3. Salir")
-        opcion = input("Seleccione una opción (1-3): ").strip()
+        print("3. Calcular potencia")
+        print("4. Convertir decimal a binario")
+        print("5. Salir")
+        opcion = input("Seleccione una opción (1-5): ").strip()
         match opcion:
             case "1":
                 numero_usuario = int(input("ingrese un numero entero positivo:"))
@@ -68,6 +93,20 @@ def menu():
                 mostrar_fibonacci_hasta(numero_usuario)
                 input("\nPresione Enter para continuar...")
             case "3":
+                base = float(input("Ingrese la base: "))
+                exponente = int(input("Ingrese el exponente (entero no negativo): "))
+                if exponente < 0:
+                    print("El exponente debe ser un entero no negativo.")
+                else:
+                    resultado= potencia_recursiva(base, exponente)
+                    print(f"{base} elevado a la {exponente} es {resultado}")
+                input("\nPresione Enter para continuar...")
+            case "4":
+                numero_usuario = int(input("ingrese un numero entero positivo:"))
+                binario = decimal_a_binario(numero_usuario)
+                print(f"La representación binaria de {numero_usuario} es: {binario}")
+                input("\nPresione Enter para continuar...")
+            case "5":
                 print("Saliendo.")
                 break
 
