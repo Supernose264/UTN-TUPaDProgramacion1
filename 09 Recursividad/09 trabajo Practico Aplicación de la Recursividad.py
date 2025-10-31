@@ -136,10 +136,28 @@ def contar_bloques(n):
         return n + contar_bloques(n - 1)
 
 
+#Escribí una función recursiva llamada contar_digito(numero, digito) que reciba un
+#número entero positivo (numero) y un dígito (entre 0 y 9), y devuelva cuántas veces
+#aparece ese dígito dentro del número.
+#Ejemplos:
+#contar_digito(12233421, 2) → 3
+#contar_digito(5555, 5) → 4
+#contar_digito(123456, 7) → 0
+
+def contar_digito(numero, digito):
+    if numero == 0:
+        return 0
+    else:
+        cuenta = 1 if numero % 10 == digito else 0
+        return cuenta + contar_digito(numero // 10, digito)
+    
+
 # funcion del menu principal
 def menu():
     while True:
+        #limpia la pantalla
         os.system(CLEAR)
+        # imprime el menu con sus opciones
         print("== Menu del trabajo Practico ==")
         print("1. Calcular factoriales")
         print("2. Mostrar serie de Fibonacci")
@@ -148,49 +166,84 @@ def menu():
         print("5. Verificar palíndromo")
         print("6. Sumar dígitos de un número")
         print("7. Contar bloques para pirámide")
-        print("8. Salir")
-        opcion = input("Seleccione una opción (1-6): ").strip()
+        print("8. Contar dígito en un número")
+        print("9. Salir")
+        #lee la opción del usuario
+        opcion = input("Seleccione una opción (1-9): ").strip()
+        #ejecuta la opción seleccionada
         match opcion:
             case "1":
+                #el usuario ingresa un numero
                 numero_usuario = int(input("ingrese un numero entero positivo:"))
+                # se muestran los factoriales hasta el numero ingresado
                 mostrar_factoriales_hasta(numero_usuario)
                 input("\nPresione Enter para continuar...")
             case "2":
+                #el usuario ingresa un numero
                 numero_usuario = int(input("ingrese un numero entero positivo:"))
+                # se muestra la serie de fibonacci hasta el numero ingresado
                 mostrar_fibonacci_hasta(numero_usuario)
                 input("\nPresione Enter para continuar...")
             case "3":
+                #el usuario ingresa base y exponente
                 base = float(input("Ingrese la base: "))
                 exponente = int(input("Ingrese el exponente (entero no negativo): "))
+                # verifica que el exponente sea no negativo
                 if exponente < 0:
                     print("El exponente debe ser un entero no negativo.")
                 else:
+                    # calcula la potencia recursivamente
                     resultado= potencia_recursiva(base, exponente)
+                    # muestra el resultado
                     print(f"{base} elevado a la {exponente} es {resultado}")
                 input("\nPresione Enter para continuar...")
             case "4":
+                #el usuario ingresa un numero
                 numero_usuario = int(input("ingrese un numero entero positivo:"))
+                # convierte el numero a binario recursivamente
                 binario = decimal_a_binario(numero_usuario)
+                # muestra el resultado
                 print(f"La representación binaria de {numero_usuario} es: {binario}")
                 input("\nPresione Enter para continuar...")
             case "5":
+                #el usuario ingresa una palabra
                 palabra = input("Ingrese una palabra sin espacios ni tildes: ").strip()
+                # verifica si la palabra es palindromo recursivamente
                 if es_palindromo(palabra):
                     print(f'"{palabra}" es un palíndromo.')
                 else:
                     print(f'"{palabra}" no es un palíndromo.')
                 input("\nPresione Enter para continuar...")
             case "6":
+                #el usuario ingresa un numero
                 numero_usuario = int(input("ingrese un numero entero positivo:"))
+                # calcula la suma de los digitos recursivamente
                 suma = suma_digitos(numero_usuario)
+                # muestra el resultado
                 print(f"La suma de los dígitos de {numero_usuario} es: {suma}")
                 input("\nPresione Enter para continuar...")
             case "7":
+                #el usuario ingresa un numero
                 numero_usuario = int(input("ingrese un numero entero positivo:"))
+                # calcula el total de bloques recursivamente
                 total_bloques = contar_bloques(numero_usuario)
+                # muestra el resultado
                 print(f"El total de bloques necesarios para una pirámide con {numero_usuario} bloques en la base es: {total_bloques}")
                 input("\nPresione Enter para continuar...")
             case "8":
+                #el usuario ingresa un numero y un digito
+                numero_usuario = int(input("ingrese un numero entero positivo:"))
+                digito = int(input("ingrese un dígito entre 0 y 9:"))
+                # verifica que el digito esté entre 0 y 9
+                if digito < 0 or digito > 9:
+                    print("El dígito debe estar entre 0 y 9.")
+                else:
+                    # cuenta las apariciones del digito recursivamente
+                    cuenta = contar_digito(numero_usuario, digito)
+                    # muestra el resultado
+                    print(f"El dígito {digito} aparece {cuenta} veces en el número {numero_usuario}.")
+                input("\nPresione Enter para continuar...")
+            case "9":
                 print("Saliendo.")
                 break
 
